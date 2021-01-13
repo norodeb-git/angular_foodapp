@@ -1,5 +1,53 @@
-<p>signup works!</p>
-<div>
-    <input type="text">
-    <button (click)="submit()">Register</button>
+<div class="container-fluid">
+  <div>
+    <div class="container">
+      <form [formGroup]="registerUserData">
+        <div class="container" >
+          <div class="form-group">
+            <h1>Sign Up</h1>
+            <hr>
+          </div>
+
+          <div>
+            <div class="col-md-6">
+              <!-- First Name -->
+              <label>Enter First Name</label>
+              <input placeholder="Enter First Name" formControlName="_userFirstName">
+            </div>
+            <div class="col-md-6">
+              <!-- Last Name -->
+              <label>Enter Last Name</label>
+              <input placeholder="Enter Last Name" formControlName="_userLastName">
+            </div>
+            <div class="col-md-6">
+              <!-- Address -->
+              <label>Enter Address</label>
+              <input placeholder="Enter Address" formControlName="_userAddress">
+            </div>
+            <div class="col-md-6">
+              <!-- Email ID -->
+              <label>Enter Email ID</label>
+              <input placeholder="Enter Email ID" formControlName="_userEmail">
+            </div>
+            <div class="col-md-6">
+              <!-- Mobile Number -->
+              <label>Enter Mobile Number</label>
+              <input placeholder="Enter Mobile Number" formControlName="_userPhoneNumber">
+            </div>
+            <div class="col-md-6">
+              <!-- UserName -->
+              <label>Enter UserName</label>
+              <input placeholder="Enter UserName" formControlName="_userName">
+            </div>
+            <div class="col-md-6">
+              <!-- Password -->
+              <label>Enter Password</label>
+              <input placeholder="Enter Password" formControlName="_userPassword">
+            </div>
+          </div>
+          <button class="btn btn-success" (click)="registerUser(registerUserData)">SignUp</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

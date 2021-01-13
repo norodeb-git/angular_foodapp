@@ -1,0 +1,24 @@
+<p>login works!</p><div class="container">
+    <form [formGroup]="loginUserData">
+      <div class="container" >
+        <div class="form-group">
+          <h1>Login Up</h1>
+          <hr>
+        </div>
+
+        <div>
+          <div class="col-md-6">
+            <!-- UserName -->
+            <label>Enter UserName</label>
+            <input placeholder="Enter UserName" formControlName="_userName">
+          </div>
+          <div class="col-md-6">
+            <!-- Password -->
+            <label>Enter Password</label>
+            <input placeholder="Enter Password" formControlName="_userPassword">
+          </div>
+        </div>
+        <button class="btn btn-success" (click)="loginUser(loginUserData)">SignUp</button>
+      </div>
+    </form>
+  </div>
