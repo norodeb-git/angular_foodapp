@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Login } from '../object/Login';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginDataService } from '../services/login-data.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,10 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private router : Router,
+    private loginData : LoginDataService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -39,7 +44,12 @@ export class LoginComponent implements OnInit {
   submit() {
     console.log("register")
     this.register(this.login).subscribe(
-      res => console.log(res),
+      res =>{
+        console.log(res)
+        this.loginData.setCurrentUserValidated(true);
+        localStorage.setItem("loginValid","true");
+        this.router.navigate(["/dashboard"]);
+      },
       err => console.log(err)
     );
   }
