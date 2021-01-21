@@ -7,7 +7,7 @@ import { LoginDataService } from '../services/login-data.service';
 })
 export class LoginAuthService implements CanActivate{
 canActivate(): boolean {
-  if(localStorage.getItem("loginValid")=="true"){
+  if(localStorage.getItem("loginValid")=="yes"){
     return true;
   }
   else{

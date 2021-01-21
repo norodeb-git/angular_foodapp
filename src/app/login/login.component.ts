@@ -46,11 +46,12 @@ export class LoginComponent implements OnInit {
     this.register(this.login).subscribe(
       res =>{
         console.log(res)
-        this.loginData.setCurrentUserValidated(true);
-        localStorage.setItem("loginValid","true");
+        //this.loginData.setCurrentUserValidated(true);
+        localStorage.setItem("loginValid","yes");
         this.router.navigate(["/dashboard"]);
       },
-      err => console.log(err)
+      err => {console.log(err)
+      localStorage.setItem("loginValid","no");}
     );
   }
   register(loginUser: Login): Observable<any> {

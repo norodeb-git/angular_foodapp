@@ -32,8 +32,10 @@ export class SignupComponent implements OnInit {
 
     console.log("register")
     this.register(this.user).subscribe(
-      res => {
-        console.log(res);
+      response => {
+        console.log(response);
+        window.alert("registered");
+
       },
       err => {
         console.log(err);

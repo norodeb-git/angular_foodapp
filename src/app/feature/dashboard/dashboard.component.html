@@ -1,2 +1,10 @@
 <p>dashboard works!</p>
 <button class="btn btn-success" (click)="logoutUser()">Logout</button>
+
+<div>
+    <h1>asdsad</h1>
+    <ul>
+        <li *ngFor="let item of data; index as i; trackBy: trackByFn">{{ item.restaurantId }}</li>
+        <!-- <li *ngFor="let d of data">{{ d.restaurantId }}</li> -->
+    </ul>
+</div>
